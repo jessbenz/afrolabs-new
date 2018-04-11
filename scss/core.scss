@@ -1,0 +1,128 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+    font-family: Lato;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4em;
+    color: #1C1C1C;
+}
+
+h1 {
+    color: $color-dark-gray;
+    font-size: 3.7em;
+    font-weight: lighter;
+    &.home-headline {
+        font-weight: bold;
+        font-size: 4em;
+        color: $primary-purple;
+        margin-bottom: 3.8rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+h2 {
+    color: $color-dark-gray;
+    font-size: 2.3em;
+    font-weight: lighter;
+}
+h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+h4 {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+a {
+    color: $primary-dark-blue;
+    &.lighter-link {
+        color: #40B6FF;
+    }
+}
+
+.font-lightweight {
+    font-weight: lighter;
+}
+.font-bold {
+    font-weight: bold;
+}
+
+.btn,
+a.btn,
+a.btn:not([href]):not([tabindex]) {
+    @include border-radius(4px);
+    @include box-shadow(0,1px,2px,0,rgba(0,0,0,0.30),false);
+    @include btn-text;
+    background-color: $primary-pink;
+    padding: $btn-padding;
+    color: white;
+    border: 0;
+    &:hover {
+        background-color: $primary-pink-hover;
+    }
+}
+
+.navbar {
+    @include box-shadow(0,0,3px,0,rgba(0,0,0,0.42),false);
+    padding: .1rem 1rem;
+    z-index: 500;
+    .navbar-nav {
+         .nav-link {
+            @include border-radius(4px);
+            @include btn-text;
+            padding: $btn-padding;
+        }
+        .active > .nav-link {
+            background-color: $primary-pink;
+            color: white;
+        }
+    }
+    &.navbar-light {
+        background-color: white;
+    }
+}
+
+.gradient-sky {
+    @include gradient(rgba(209,229,235,.28), 0%, rgba(255,255,255,0), 100%, vertical);
+    height: 200px;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 70px;
+    text-align: center;
+    .clouds {
+        margin-top: -30px;
+        img:first-of-type {
+            @include opacity(.8);
+            margin-right: 20%;
+        }
+        img:nth-of-type(2) {
+            margin-top: -45px;
+            margin-right: 10px;
+        }
+    }
+    & ~ main {
+        padding-top: 100px;
+    }
+}
+
+
+
+/* Bootstrap breakpoints:
+@include media-breakpoint-up(xs) { ... }
+@include media-breakpoint-up(sm) { ... }
+@include media-breakpoint-up(md) { ... }
+@include media-breakpoint-up(lg) { ... }
+@include media-breakpoint-up(xl) { ... }
+
+// Example usage:
+@include media-breakpoint-up(sm) {
+  .some-class {
+    display: block;
+  }
+} */
