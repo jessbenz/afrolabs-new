@@ -1,6 +1,14 @@
+/* Shouldn't need Bootstrap import once Bootstrap has been installed
+properly with a package manager. Please also remove cdns from index
+page once installed. */
+@import 'bootstrap/bootstrap.scss';
+
 @import 'variables';
 @import 'mixins';
 
+body,html {
+    height: 100%;
+}
 body {
     font-family: Lato;
     font-weight: 400;
@@ -29,8 +37,9 @@ h2 {
     font-weight: lighter;
 }
 h3 {
+    color: $color-dark-gray;
     font-size: 1.5em;
-    font-weight: 600;
+    font-weight: 500;
 }
 h4 {
     font-size: 1.25em;
@@ -39,7 +48,13 @@ h4 {
 
 a {
     color: $primary-dark-blue;
-    &.lighter-link {
+    font-weight: 700;
+    &:hover {
+        text-decoration: underline;
+        color: $primary-dark-blue-hover;
+    }
+    &.lighter-link,
+    &.lighter-link:hover {
         color: #40B6FF;
     }
 }
@@ -49,6 +64,9 @@ a {
 }
 .font-bold {
     font-weight: bold;
+}
+.caption {
+    font-size: $small-text;
 }
 
 .btn,
@@ -106,19 +124,134 @@ a.btn:not([href]):not([tabindex]) {
             margin-right: 10px;
         }
     }
-    & ~ main {
+    & ~ .page-wrapper {
         padding-top: 100px;
+    }
+} 
+
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 250px; /* a height is necessary for iphone */
+    background-color: rgba(0,0,0,.06);
+    img {
+        min-height:100%; 
+        min-width: 100%;
+        object-fit: cover;
+        height: 100%;  
+        width: auto;  
+    }    
+}
+
+.card {
+    @include box-shadow(0,1px,3px,0,rgba(0,0,0,0.50),false);
+    @include border-radius(5px);
+    background-color: white;
+    border: 0;
+    .card-header {
+        @include border-radius($card-border-radius $card-border-radius 0 0);
+        padding: 7px;
+        background-color: white;
+        border-bottom: 0;
+        .fill {
+            height: 350px;
+            border: 1px solid #E6E6E6;
+        }
+    }
+    .card-body {
+        padding: $card-padding;
+        .card-title {
+            margin: -10px 0 1em 0;
+            position: relative;
+            .icon {
+                @include border-radius(50%);
+                @include box-shadow(0,1px,2px,0,rgba(0,0,0,0.23),false);
+                background-color: $color-pale-gray;
+                width: 42px;
+                height: 42px;
+                position: absolute;
+                margin-left: calc((-#{$card-padding}) - 3px);
+                top: -7px;
+                border: 1px solid white;
+                img {
+                    max-width: 68%;
+                    max-height: 68%;
+                }
+            }
+        }
+    }
+    .card-footer {
+        @include border-radius(0 0 $card-border-radius $card-border-radius);
+        padding: 0;
+        background: transparent;
+        border: 0;        
+        .card-actions {
+            padding: 0 $card-padding 1.3em $card-padding;
+            a {
+                max-width: 50%;
+            }
+        }
+        .card-project-processes {
+            @include border-radius(0 0 $card-border-radius $card-border-radius);
+            background-color: #242424;
+            .card-processes-item {
+                padding: .3em .8em;
+                text-align: center;
+                img {
+                    margin-top: 2px;
+                }
+                .caption {
+                    @include opacity(.8);
+                    margin: 0;
+                    letter-spacing: .09em;
+                    font-size: 11px;
+                    text-transform: uppercase;
+                    color: white;
+                }
+            }
+            .card-processes-item.disabled {
+                @include opacity(.22);
+                .caption {
+                    @include opacity(1);
+                }
+            }
+        }
+    } /* /card-footer */
+
+    &.card-horizontal {
+        flex-direction: row;
+        max-height: 400px;
+        .card-header,
+        .card-body {
+            width: 50%;
+        }
+        .card-header {
+            padding-right: 0;
+            .fill {
+                height: 100%;
+            }
+        }
+        .card-body {
+            padding-bottom: 0;
+        }
+        .card-footer {
+            flex-direction: column;
+        }
     }
 }
 
-
+.tile {
+    background-color: white;
+}
 
 /* Bootstrap breakpoints:
-@include media-breakpoint-up(xs) { ... }
-@include media-breakpoint-up(sm) { ... }
-@include media-breakpoint-up(md) { ... }
-@include media-breakpoint-up(lg) { ... }
-@include media-breakpoint-up(xl) { ... }
+@include media-breakpoint-up(xs) { ... } 0px
+@include media-breakpoint-up(sm) { ... } 576px
+@include media-breakpoint-up(md) { ... } 768px
+@include media-breakpoint-up(lg) { ... } 992px
+@include media-breakpoint-up(xl) { ... } 1200px
 
 // Example usage:
 @include media-breakpoint-up(sm) {
@@ -126,3 +259,6 @@ a.btn:not([href]):not([tabindex]) {
     display: block;
   }
 } */
+
+
+@import 'home';

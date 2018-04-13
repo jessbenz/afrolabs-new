@@ -1,0 +1,11 @@
+.home {
+    background-color: $color-pale-gray;
+    .products {
+        margin-top: 2.5em;
+        @include media-breakpoint-up(xl) {
+            .container {
+                max-width: 1000px;
+            }
+        }    
+    }
+}
