@@ -67,10 +67,17 @@
     }
 } /* @include box-shadow(1px,1px,1px,0, #fff, true); */
 
+@mixin box-shadow-none {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
 @mixin btn-text {
     font-size: $small-text;
     text-transform: uppercase;
     letter-spacing: .17em;
+    font-weight: 400;
 }
 
 @mixin gradient($start-color, $start-pos, $end-color, $end-pos, $orientation) {
@@ -92,4 +99,12 @@
     opacity: $value;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$ie-value+")";
     filter: alpha(opacity=$ie-value);
+}
+
+@mixin transform-move($x,$y) {
+    transform: translate($x,$y);
+    -webkit-transform: translate($x,$y);
+    -moz-transform: translate($x,$y);
+    -o-transform: translate($x,$y);
+    -ms-transform: translate($x,$y);
 }
