@@ -108,3 +108,16 @@
     -o-transform: translate($x,$y);
     -ms-transform: translate($x,$y);
 }
+
+@mixin cardgroup-column-layout {
+    .card-group {
+        display: flex;
+        flex-direction: column;
+        @include box-shadow-none;
+        > .card, .card:not(:first-child):not(:last-child):not(:only-child) {
+            @include border-radius($card-border-radius);
+            @include box-shadow(0,1px,3px,0,rgba(0,0,0,0.50),false);
+            margin-bottom: 15px;
+        }
+    }    
+}

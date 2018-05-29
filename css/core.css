@@ -7131,5 +7131,80 @@ footer {
           font-weight: 300; }
       .home section.how .card-group .card:first-child {
         border-right: 0; }
+    @media (max-width: 991.98px) {
+      .home section.how .card-group {
+        display: flex;
+        flex-direction: column;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none; }
+        .home section.how .card-group > .card, .home section.how .card-group .card:not(:first-child):not(:last-child):not(:only-child) {
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+          -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+          -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+          margin-bottom: 15px; }
+      .home section.how .card-group > .card, .home section.how .card-group .card:not(:first-child):not(:last-child):not(:only-child) {
+        margin-bottom: 30px;
+        border: 5px solid white; }
+      .home section.how .card-group .card:last-child {
+        border-left: 5px solid white; } }
+
+/* paralax: */
+body, html {
+  margin: 0;
+  padding: 0; }
+
+.wrapper {
+  /* The height needs to be set to a fixed value for the effect to work.
+   * 100vh is the full height of the viewport. */
+  height: 100vh;
+  /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
+  overflow-x: hidden;
+  /* Enable scrolling on the page. */
+  overflow-y: auto;
+  /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
+  perspective: 2px; }
+
+.section {
+  /* Needed for children to be absolutely positioned relative to the parent. */
+  position: relative;
+  /* The height of the container. Must be set, but it doesn't really matter what the value is. */
+  height: 100vh;
+  /* For text formatting. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0 0 5px #000; }
+
+.parallax::after,
+.parallax::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  background-repeat: no-repeat;
+  transform: translateZ(-2px) scale(4);
+  background-size: 100%;
+  z-index: -1; }
+
+/* The styling for the static div. */
+.static {
+  background: red; }
+
+.parallax-clouds .bg::before {
+  background-image: url("../images/cloud-left.svg");
+  left: 0;
+  top: -520px;
+  width: 90px;
+  height: 45px; }
+.parallax-clouds .bg::after {
+  background-image: url("../images/clouds-right.svg");
+  right: 0;
+  top: -480px;
+  width: 227px;
+  height: 60px; }
 
 /*# sourceMappingURL=core.css.map */
