@@ -6748,6 +6748,12 @@ body {
   color: #1C1C1C;
   background-color: #F3F3F3; }
 
+.svg {
+  vertical-align: middle;
+  margin-top: -2px; }
+  .svg path {
+    fill: currentColor; }
+
 h1 {
   color: #333333;
   font-size: 3.7em;
@@ -6785,22 +6791,12 @@ h4 {
 a {
   color: #2B71B8;
   font-weight: 700; }
-  a.case-study-link {
-    padding-right: 30px;
-    background: right center url("/images/arrow-next-blue.svg") no-repeat; }
-  a.project-link {
-    padding-left: 25px;
-    background: left center url("/images/link-blue.svg") no-repeat; }
   a:hover {
     text-decoration: underline;
     color: #1259A1; }
   a.lighter-link, a.lighter-link:hover {
     font-weight: 400;
     color: #40B6FF; }
-    a.lighter-link.case-study-link, a.lighter-link:hover.case-study-link {
-      background-image: url("/images/arrow-next-lightblue.svg"); }
-    a.lighter-link.project-link, a.lighter-link:hover.project-link {
-      background-image: url("/images/link-lightblue.svg"); }
 
 .font-lightweight {
   font-weight: lighter; }
@@ -6882,8 +6878,8 @@ footer {
   footer .contact-deets h4 {
     font-weight: 300;
     margin-right: 1.2em; }
-    footer .contact-deets h4 img {
-      margin-top: 3px; }
+    footer .contact-deets h4 .svg {
+      margin-top: 4px; }
   footer form {
     margin-bottom: 3em; }
   footer .social-embed > * {
@@ -7050,8 +7046,9 @@ footer {
       background-color: #242424; }
       .card .card-footer .card-project-processes .card-processes-item {
         padding: .3em .8em;
-        text-align: center; }
-        .card .card-footer .card-project-processes .card-processes-item img {
+        text-align: center;
+        color: white; }
+        .card .card-footer .card-project-processes .card-processes-item .svg {
           margin-top: 2px; }
         .card .card-footer .card-project-processes .card-processes-item .caption {
           opacity: 0.8;
@@ -7257,12 +7254,44 @@ footer {
 
 .processes {
   background-color: white; }
-  .processes .info-area {
-    width: 50%;
-    max-width: 400px; }
+  .processes .info-area h2 {
+    color: #5D2359;
+    font-size: 2.8em;
+    font-weight: 500;
+    letter-spacing: .12em;
+    margin: 1rem 0; }
   .processes .image-container img {
     width: 100%;
     height: auto; }
+  .processes .image-container.ideation img {
+    width: 105%;
+    max-width: 819px;
+    margin-left: -70px; }
+  .processes .process-circle {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px dashed #767676;
+    width: 98px;
+    height: 98px;
+    margin-left: -13px;
+    position: relative; }
+    .processes .process-circle:after {
+      content: "";
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      position: absolute;
+      left: -218px;
+      top: 10px;
+      border: 1px dashed transparent;
+      border-top-color: #767676;
+      display: block;
+      width: 250px;
+      height: 150px;
+      transform: rotate(-5deg); }
+  .processes section.ideation {
+    border-bottom: 2px solid #898989; }
 
 /* Floating clouds: */
 #clouds {

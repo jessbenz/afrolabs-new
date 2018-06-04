@@ -19,6 +19,14 @@ body {
     background-color: $color-pale-gray;
 }
 
+.svg {
+    vertical-align: middle;
+    margin-top: -2px;   
+    path {
+        fill: currentColor;
+    } 
+}
+
 h1 {
     color: $color-dark-gray;
     font-size: 3.7em;
@@ -60,14 +68,6 @@ h4 {
 a {
     color: $primary-dark-blue;
     font-weight: 700;
-    &.case-study-link {
-        padding-right: 30px;
-        background: right center url("/images/arrow-next-blue.svg") no-repeat;
-    }
-    &.project-link {
-        padding-left: 25px;
-        background: left center url("/images/link-blue.svg") no-repeat;
-    }
     &:hover {
         text-decoration: underline;
         color: $primary-dark-blue-hover;
@@ -76,12 +76,6 @@ a {
     &.lighter-link:hover {
         font-weight: 400;
         color: #40B6FF;
-        &.case-study-link {
-            background-image: url("/images/arrow-next-lightblue.svg");
-        }
-        &.project-link {
-            background-image: url("/images/link-lightblue.svg");
-        }
     }
 }
 
@@ -166,8 +160,8 @@ footer {
         h4 {
             font-weight: 300;
             margin-right: 1.2em;
-            img {
-                margin-top: 3px;
+            .svg {
+                margin-top: 4px;
             }
         }
     }
@@ -343,7 +337,8 @@ footer {
             .card-processes-item {
                 padding: .3em .8em;
                 text-align: center;
-                img {
+                color: white;
+                .svg {
                     margin-top: 2px;
                 }
                 .caption {

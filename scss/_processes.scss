@@ -1,13 +1,53 @@
 .processes {
     background-color: white;
     .info-area {
-        width: 50%;
-        max-width: 400px;
+        // padding: 1rem 0 2.2rem 0;
+        h2 {
+            color: $primary-purple;
+            font-size: 2.8em;
+            font-weight: 500;
+            letter-spacing: .12em;
+            margin: 1rem 0;
+        }
+        @include media-breakpoint-between(xs,md) {
+
+        }
     }
     .image-container {
         img {
             width: 100%;
             height: auto;
         }
+        &.ideation {
+            img {
+                width: 105%;
+                max-width: 819px;
+                margin-left: -70px
+            }
+        }
+    }
+    .process-circle {
+        @include border-radius(50%);
+        border: 1px dashed #767676;
+        width: 98px;
+        height: 98px;
+        margin-left: -13px;
+        position: relative;
+        &:after {
+            content: "";
+            @include border-radius(50%);
+            position: absolute;
+            left: -218px;
+            top: 10px;
+            border: 1px dashed transparent;
+            border-top-color: #767676;
+            display: block;
+            width: 250px;
+            height: 150px;
+            transform: rotate(-5deg);
+        }
+    }
+    section.ideation {
+        border-bottom: 2px solid #898989;
     }
 }
