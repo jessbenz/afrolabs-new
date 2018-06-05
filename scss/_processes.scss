@@ -1,7 +1,7 @@
 .processes {
     background-color: white;
     .info-area {
-        // padding: 1rem 0 2.2rem 0;
+        padding: 4rem 0;
         h2 {
             color: $primary-purple;
             font-size: 2.8em;
@@ -9,23 +9,22 @@
             letter-spacing: .12em;
             margin: 1rem 0;
         }
-        @include media-breakpoint-between(xs,md) {
-
-        }
     }
     .image-container {
         img {
             width: 100%;
             height: auto;
         }
-        &.ideation {
-            img {
-                width: 105%;
-                max-width: 819px;
-                margin-left: -70px
-            }
-        }
     }
+    section.ideation {
+        margin-top: 2.5rem;
+        border-bottom: 2px solid #898989;        
+        .image-container img {
+            width: 105%;
+            max-width: 819px;
+            margin-left: -70px
+        }
+    }    
     .process-circle {
         @include border-radius(50%);
         border: 1px dashed #767676;
@@ -46,8 +45,138 @@
             height: 150px;
             transform: rotate(-5deg);
         }
+        .svg {
+            margin-top: 1rem;
+        }
     }
-    section.ideation {
-        border-bottom: 2px solid #898989;
+    section.exploration {
+        .process-circle:after {
+            right: -287px;
+            left: auto;
+            transform: rotate(3deg);
+            width: 320px;
+        }
+        .image-container {
+            padding: 4rem 0 3rem 1rem;
+            margin-right: -50px;
+            img {
+                max-width: 706px;
+            }
+        }
     }
+    section.creation {
+        background-color: $primary-purple;
+        padding-bottom: 4rem;
+        .info-area {
+            color: white;
+            font-weight: 300;
+            h2 {
+                color: white;
+            }
+        }
+        .image-container img {
+            margin: -100px 0 0 -100px;
+        }
+        .process-circle {
+            border-color: white;
+            .svg {
+                fill: white;
+            }
+            &:after {
+                border-color: transparent;
+                border-bottom-color: white;
+                top: auto;
+                bottom: 20px;
+                width: 130px;
+                height: 50px;
+                left: -118px;
+                transform: rotate(0deg);
+            }
+        }
+        @media (max-width: 1500px) {
+            .slant ~ .slant-sibling {
+                margin-top: -50px;
+            }
+        }
+        @media (max-width: 1330px) {
+            .slant {
+                margin-top: -200px;
+            }
+            .slant ~ .slant-sibling {
+                margin-top: -80px;
+            }
+            .info-area {
+                padding-bottom: 0;
+            }
+            .image-container img {
+                margin-left: -30px;
+                margin-top: -50px;
+                width: 90%;
+            }
+        }
+        @media (max-width: 1201px) {
+            .slant ~ .slant-sibling {
+                margin-top: -130px;
+            }        
+        }
+        @media (min-width: 1198px) and (max-width: 1201px) {
+            .slant {
+                margin-top: -220px;
+            }        
+        }
+        @media (max-width: 1197px) {
+            .slant {
+                margin-top: -120px;
+            }        
+        }        
+    }
+    @include media-breakpoint-between(xs,md) {
+        .info-area {
+            padding: .7rem 0 2rem 0;
+        }
+        .image-container {
+            margin: -.5rem 0 1.5rem 0;
+        }
+        section.exploration .image-container {
+            margin-right: 0;
+        }
+        .process-circle {
+            margin: 0 auto;
+            &:after {
+                display: none;
+            }
+        }
+        section.ideation {
+            .image-container img {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+        section.exploration {
+            padding-top: 2rem;
+            .image-container {
+                padding: 0;
+                text-align: center;
+                img {
+                    max-width: 550px
+                }
+            }
+        }
+    }
+    @include media-breakpoint-between(xs,sm) {
+        .process-circle {
+            width: 80px;
+            height: 80px;
+            img {
+                width: 62%;
+                height: auto;                
+            }
+        }
+        .info-area h2 {
+            font-size: 1.8em;
+        }
+        section.ideation {
+            margin-top: 1rem;
+        }
+    }  
 }
