@@ -6887,7 +6887,7 @@ a.btn:not([href]):not([tabindex]) {
 
 .low-poly {
   position: absolute;
-  bottom: -12px;
+  bottom: 0;
   left: 0;
   right: 0; }
   .low-poly img {
@@ -6950,6 +6950,16 @@ footer {
     .gradient-sky .clouds img:nth-of-type(2) {
       margin-top: -45px;
       margin-right: 10px; }
+    @media (max-width: 767.98px) {
+      .gradient-sky .clouds {
+        margin-top: -40px; }
+        .gradient-sky .clouds img {
+          width: 150px;
+          height: auto; }
+        .gradient-sky .clouds img:first-of-type {
+          margin-right: 5%; }
+        .gradient-sky .clouds img:nth-of-type(2) {
+          display: none; } }
   .gradient-sky ~ .page-wrapper {
     padding-top: 100px;
     position: relative; }
@@ -7192,6 +7202,9 @@ footer {
 
 /*  /card  */
 .card-group {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5); }
@@ -7383,8 +7396,22 @@ footer {
       font-weight: 300; }
       .processes section.creation .info-area h2 {
         color: white; }
-    .processes section.creation .image-container img {
-      margin: -100px 0 0 -100px; }
+    .processes section.creation .image-container {
+      position: relative; }
+      .processes section.creation .image-container:after {
+        content: "";
+        display: block;
+        background: url("/images/creation-illustration-shadow.png") no-repeat;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        margin-left: -170px;
+        background-size: 100%;
+        width: 113px;
+        height: 29px; }
+      .processes section.creation .image-container img {
+        margin: -100px 0 0 -100px;
+        position: relative; }
     .processes section.creation .process-circle {
       border-color: white; }
       .processes section.creation .process-circle .svg {
@@ -7411,7 +7438,9 @@ footer {
       .processes section.creation .image-container img {
         margin-left: -30px;
         margin-top: -50px;
-        width: 90%; } }
+        width: 90%; }
+      .processes section.creation .image-container:after {
+        margin-left: -135px; } }
     @media (max-width: 1201px) {
       .processes section.creation .slant ~ .slant-sibling {
         margin-top: -130px; } }
@@ -7428,6 +7457,8 @@ footer {
         margin-top: -70px; }
     .processes section.creation .image-container {
       text-align: center; }
+      .processes section.creation .image-container:after {
+        margin-left: -60px; }
       .processes section.creation .image-container img {
         margin: 2rem 0 0 0;
         width: 100%;
@@ -7472,10 +7503,15 @@ footer {
     .processes section.creation .slant ~ .slant-sibling {
       margin-top: -35px; }
     .processes section.creation .image-container {
-      margin-bottom: 0; }
+      margin-bottom: 1rem; }
       .processes section.creation .image-container img {
         width: 90%;
         margin-top: 1rem; }
+      .processes section.creation .image-container::after {
+        width: 70px;
+        height: 20px;
+        margin-left: -40px;
+        bottom: -15px; }
     .processes section.exploration {
       padding-top: 1.2rem; }
       .processes section.exploration .image-container {

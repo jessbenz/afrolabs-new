@@ -171,7 +171,7 @@ a.btn:not([href]):not([tabindex]) {
 
 .low-poly {
     position: absolute;
-    bottom: -12px;
+    bottom: 0;
     left: 0;
     right: 0;
     img {
@@ -249,6 +249,19 @@ footer {
             margin-top: -45px;
             margin-right: 10px;
         }
+        @include media-breakpoint-between(xs,sm) {
+            margin-top: -40px;
+            img {
+                width: 150px;
+                height: auto;
+            }
+            img:first-of-type {
+                margin-right: 5%;
+            }
+            img:nth-of-type(2) {
+                display: none;
+            }
+        }        
     }
     & ~ .page-wrapper {
         padding-top: 100px;
@@ -499,6 +512,7 @@ footer {
  
 } /*  /card  */
 .card-group {
+    @include border-radius($card-border-radius);
     @include box-shadow(0,1px,3px,0,rgba(0,0,0,0.50),false);
     .card {
         @include box-shadow-none;
