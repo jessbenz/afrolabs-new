@@ -237,7 +237,7 @@ footer {
     z-index: 1;
     left: 0;
     right: 0;
-    top: 70px;
+    top: 50px;
     text-align: center;
     .clouds {
         margin-top: -30px;
@@ -254,6 +254,9 @@ footer {
         padding-top: 100px;
         position: relative;
     }
+    @include media-breakpoint-up(sm) {
+        top: 70px;         
+    }    
 } 
 .page-wrapper {
     padding-top: 3em;
@@ -341,6 +344,25 @@ footer {
         z-index: 2;
         background: inherit;
     }    
+}
+
+.bounce {
+    position: relative;
+    -webkit-animation: bounce 5s infinite;
+    &.start-top {
+        -webkit-animation: bouncetop 5s infinite;
+    }
+}
+
+@-webkit-keyframes bounce {
+  0%       { bottom: 0; }
+  50%      { bottom: 10px; }
+  100%     {bottom: 0;}
+}
+@-webkit-keyframes bouncetop {
+  0%       { top: 0; }
+  50%      { top: 10px; }
+  100%     {top: 0;}
 }
 
 .card {

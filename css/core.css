@@ -6938,7 +6938,7 @@ footer {
   z-index: 1;
   left: 0;
   right: 0;
-  top: 70px;
+  top: 50px;
   text-align: center; }
   .gradient-sky .clouds {
     margin-top: -30px; }
@@ -6953,6 +6953,9 @@ footer {
   .gradient-sky ~ .page-wrapper {
     padding-top: 100px;
     position: relative; }
+  @media (min-width: 576px) {
+    .gradient-sky {
+      top: 70px; } }
 
 .page-wrapper {
   padding-top: 3em; }
@@ -7040,6 +7043,26 @@ footer {
     z-index: 2;
     background: inherit; }
 
+.bounce {
+  position: relative;
+  -webkit-animation: bounce 5s infinite; }
+  .bounce.start-top {
+    -webkit-animation: bouncetop 5s infinite; }
+
+@-webkit-keyframes bounce {
+  0% {
+    bottom: 0; }
+  50% {
+    bottom: 10px; }
+  100% {
+    bottom: 0; } }
+@-webkit-keyframes bouncetop {
+  0% {
+    top: 0; }
+  50% {
+    top: 10px; }
+  100% {
+    top: 0; } }
 .card {
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
@@ -7399,6 +7422,16 @@ footer {
       .processes section.creation .slant {
         margin-top: -120px; } }
   @media (max-width: 991.98px) {
+    .processes section.creation .slant {
+      margin-top: -10px; }
+      .processes section.creation .slant ~ .slant-sibling {
+        margin-top: -70px; }
+    .processes section.creation .image-container {
+      text-align: center; }
+      .processes section.creation .image-container img {
+        margin: 2rem 0 0 0;
+        width: 100%;
+        max-width: 540px; }
     .processes .info-area {
       padding: .7rem 0 2rem 0; }
     .processes .image-container {
@@ -7423,13 +7456,32 @@ footer {
     .processes .process-circle {
       width: 80px;
       height: 80px; }
-      .processes .process-circle img {
+      .processes .process-circle img, .processes .process-circle .svg {
         width: 62%;
-        height: auto; }
+        height: auto;
+        margin-top: 0; }
     .processes .info-area h2 {
       font-size: 1.8em; }
     .processes section.ideation {
-      margin-top: 1rem; } }
+      margin-top: 1rem; }
+    .processes section.creation {
+      padding-bottom: 2.5rem; } }
+  @media (max-width: 575.98px) {
+    .processes .info-area {
+      padding-bottom: 1rem; }
+    .processes section.creation .slant ~ .slant-sibling {
+      margin-top: -35px; }
+    .processes section.creation .image-container {
+      margin-bottom: 0; }
+      .processes section.creation .image-container img {
+        width: 90%;
+        margin-top: 1rem; }
+    .processes section.exploration {
+      padding-top: 1.2rem; }
+      .processes section.exploration .image-container {
+        margin-bottom: 0; }
+        .processes section.exploration .image-container img {
+          width: 90%; } }
 
 /* Floating clouds: */
 #clouds {
